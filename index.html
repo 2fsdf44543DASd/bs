@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Web App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { text-align: center; padding: 50px; font-family: Arial, sans-serif; }
+        button { padding: 10px 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Привет, это Web App!</h1>
+    <button onclick="sendData()">Отправить данные боту</button>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Разворачиваем на весь экран
+
+        function sendData() {
+            tg.sendData(JSON.stringify({ message: "Привет от Web App!" }));
+        }
+    </script>
+</body>
+</html>
